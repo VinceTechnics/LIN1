@@ -1,1 +1,20 @@
 echo "Hello World"
+hostname=srv-lin1-02
+ip=10.10.10.22
+mask=/24
+dns1=10.10.10.11
+dns2=10.10.10.2
+gateway=10.10.10.2
+domain=lin1.local
+
+sudo hostnamectl set-hostname $hostname
+
+sudo echo "domain $domain" >> /etc/resolv.conf
+sudo echo "search $domain" >> /etc/resolv.conf
+sudo echo "nameserver $dns1" >> /etc/resolv.conf
+sudo echo "nameserver $dns2" >> /etc/resolv.conf
+
+sudo echo "address $ip$mask" >> /etc/network/interfaces
+sudo echo "address $gateway" >> /etc/network/interfaces
+
+sudo systemctl reboot 
