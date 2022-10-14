@@ -9,7 +9,7 @@ domain=lin1.local
 
 sudo hostnamectl set-hostname $hostname
 
-sudo echo "domain $domain" >> /etc/resolv.conf
+sudo bash "echo "domain $domain" >> /etc/resolv.conf"
 sudo echo "search $domain" >> /etc/resolv.conf
 sudo echo "nameserver $dns1" >> /etc/resolv.conf
 sudo echo "nameserver $dns2" >> /etc/resolv.conf
