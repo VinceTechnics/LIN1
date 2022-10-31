@@ -9,12 +9,12 @@ domain=lin1.local
 
 sudo hostnamectl set-hostname $hostname
 
-sudo bash -c "echo "domain $domain" >> /etc/resolv.conf"
-sudo bash -c "echo "search $domain" >> /etc/resolv.conf"
-sudo bash -c "echo "nameserver $dns1" >> /etc/resolv.conf"
-sudo bash -c "echo "nameserver $dns2" >> /etc/resolv.conf"
+sudo bash -c 'echo "domain $domain" >> /etc/resolv.conf'
+sudo bash -c 'echo "search $domain" >> /etc/resolv.conf'
+sudo bash -c 'echo "nameserver $dns1" >> /etc/resolv.conf'
+sudo bash -c 'echo "nameserver $dns2" >> /etc/resolv.conf'
 
-sudo bash -c "echo "address $ip$mask" >> /etc/network/interfaces"
-sudo bash -c "echo "address $gateway" >> /etc/network/interfaces"
+sudo bash -c 'echo "address $ip$mask" >> /etc/network/interfaces'
+sudo bash -c 'echo "address $gateway" >> /etc/network/interfaces'
 
 sudo systemctl reboot 
